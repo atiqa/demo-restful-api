@@ -13,6 +13,16 @@ public class TaxCalculation {
 	private double netPlusSuperAmount;
 	private String date;
 	
+	private TaxableIncomeRate taxableIncomeRate;
+	
+	public TaxableIncomeRate getTaxableIncomeRate() {
+		return taxableIncomeRate;
+	}
+
+	public void setTaxableIncomeRate(TaxableIncomeRate taxableIncomeRate) {
+		this.taxableIncomeRate = taxableIncomeRate;
+	}
+
 	TaxCalculation(String customerId){
 		this.customerId = customerId;
 		this.date = LocalDateTime.now().toString();

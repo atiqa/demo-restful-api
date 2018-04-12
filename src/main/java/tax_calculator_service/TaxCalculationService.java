@@ -43,6 +43,7 @@ public class TaxCalculationService {
 				taxCalculation.setNetPlusSuperAmount(net + superannuation);
 				taxCalculation.setSuperAmount(superannuation);
 				taxCalculation.setTaxAmount(tax);
+				taxCalculation.setTaxableIncomeRate(rate);
 				repository.save(taxCalculation);
 				return jsonObject;
 				
@@ -56,6 +57,13 @@ public class TaxCalculationService {
 	public JsonArray retrieveTaxCalculationRecords() {
 		JsonArrayBuilder builder = Json.createArrayBuilder();
 		for (TaxCalculation taxRecord : repository.findByCustomerId("user")) {
+			TaxableIncomeRate taxableIncomeRate = taxRecord.getTaxableIncomeRate();
+			JsonObject taxRateObject = Json.createObjectBuilder()
+					.add("minimumIncome", taxableIncomeRate.getMinimumIncome())
+					.add("maximumIncome", taxableIncomeRate.getMaximumIncome())
+					.add("minimumTax", taxableIncomeRate.getMinimumTax())
+					.add("taxRate", taxableIncomeRate.getTaxRate())
+					.build();
 			JsonObject jsonObject = Json.createObjectBuilder()
 					.add("id", taxRecord.get_id())
 					.add("date", taxRecord.getDate())
@@ -63,7 +71,9 @@ public class TaxCalculationService {
 					.add("super", taxRecord.getSuperAmount())
 					.add("tax", taxRecord.getTaxAmount())
 					.add("net", taxRecord.getNetAmount())
-					.add("net+super", taxRecord.getNetPlusSuperAmount()).build();
+					.add("net+super", taxRecord.getNetPlusSuperAmount())
+					.add("taxRate", taxRateObject)
+					.build();
 			builder.add(jsonObject);
 
 			System.out.println("Record=" + jsonObject.toString());
