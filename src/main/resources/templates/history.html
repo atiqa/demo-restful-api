@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Security Example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h1>TAX Calculation History</h1>
+		<table class="table table-bordered table-sm">
+			<thead>
+				<tr>
+					<th>Transaction Date</th>
+					<th>Gross Income</th>
+					<th>Superannuation</th>
+					<th>TAX Withheld</th>
+					<th>Net Payment</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="row0">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row1">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row2">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row3">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row4">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row5">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row6">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row7">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row8">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+				<tr id="row9">
+					<td id="date-id"></td>
+					<td id="gross-id">&nbsp;</td>
+					<td id="super-id"></td>
+					<td id="tax-id"></td>
+					<td id="net-id"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="row">
+			<div class="col-10" >
+				<form id="deleteHistory" method="delete" action="/taxapi/deleteHistory">
+					<button type="submit">Delete all history</button>
+				</form>	
+			</div>
+			<div class="col-2" >
+				<button id="prev">PREV</button>
+				<button id="next" style="float: right;">NEXT</button>
+			</div>
+		</div>
+		<br /> <br />
+		<div class="row col12">
+			<div class="col-10" >
+				<h2 class="10">API Log</h2>
+			</div>
+			<div class="col-2" >
+				<button id="clear" style="float: right;">Clear Log</button>
+			</div>
+		</div>
+		
+		<div id="result" class="col-12"
+			style="height: 300px; background-color: lightgrey; overflow-y: scroll;">
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-8">
+				<form method="get" action="/home">
+					<button type="submit">Return to home page</button>
+				</form>	
+			</div>	
+			<div class="col-4">		
+				<form method="get" action="/taxform">
+					<button style="float: right;" type="submit" >Return to tax calculation page</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script	th:src="@{history.js}"></script>
+</body>
+</html>

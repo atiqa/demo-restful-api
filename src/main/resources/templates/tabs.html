@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>jQuery UI Tabs - Default functionality</title>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></link>
+<link rel="stylesheet" href="/resources/demos/style.css"></link>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#tabs").tabs();
+		$("#accordion").accordion();
+		$("#menu").menu();
+		$("#speed").selectmenu();
+
+		$("#files").selectmenu();
+
+		$("#number").selectmenu().selectmenu("menuWidget").addClass("overflow");
+
+		$("#salutation").selectmenu();
+	});
+</script>
+<style>
+.ui-menu {
+	width: 150px;
+}
+
+border
+
+
+:
+
+ 
+
+0;
+}
+label {
+	display: block;
+	margin: 30px 0 0 0;
+}
+
+.overflow {
+	height: 200px;
+}
+</style>
+</head>
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">Accordion</a></li>
+			<li><a href="#tabs-2">Menu</a></li>
+			<li><a href="#tabs-3">Selectmenu</a></li>
+		</ul>
+		<div id="tabs-1">
+			<ul>
+				<div id="accordion">
+					<h3>Section 1</h3>
+					<div>
+						<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget,
+							quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida
+							in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
+							Nam mi. Proin viverra leo ut odio. Curabitur malesuada.
+							Vestibulum a velit eu ante scelerisque vulputate.</p>
+					</div>
+					<h3>Section 2</h3>
+					<div>
+						<p>Sed non urna. Donec et ante. Phasellus eu ligula.
+							Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet
+							laoreet, mauris turpis porttitor velit, faucibus interdum tellus
+							libero ac justo. Vivamus non quam. In suscipit faucibus urna.</p>
+					</div>
+				</div>
+			</ul>
+		</div>
+		<div id="tabs-2">
+			<ul id="menu">
+				<li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+				<li><div>Books</div></li>
+				<li><div>Clothing</div></li>
+				<li><div>Electronics</div>
+					<ul>
+						<li class="x ui-state-disabled"><div>Home Entertainment</div></li>
+						<li><div>Car Hifi</div></li>
+						<li><div>Utilities</div></li>
+					</ul></li>
+				<li><div>Movies</div></li>
+				<li><div>Music</div>
+					<ul>
+						<li><div>Rock</div>
+							<ul>
+								<li><div>Alternative</div></li>
+								<li><div>Classic</div></li>
+							</ul></li>
+						<li><div>Jazz</div>
+							<ul>
+								<li><div>Freejazz</div></li>
+								<li><div>Big Band</div></li>
+								<li><div>Modern</div></li>
+							</ul></li>
+						<li><div>Pop</div></li>
+					</ul></li>
+				<li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+			</ul>
+		</div>
+		<div id="tabs-3">
+			<div class="demo">
+
+				<form action="#">
+
+					<fieldset>
+						<label for="speed">Select a speed</label> <select name="speed"
+							id="speed">
+							<option>Slower</option>
+							<option>Slow</option>
+							<option selected="selected">Medium</option>
+							<option>Fast</option>
+							<option>Faster</option>
+						</select> <label for="files">Select a file</label> <select name="files"
+							id="files">
+							<optgroup label="Scripts">
+								<option value="jquery">jQuery.js</option>
+								<option value="jqueryui">ui.jQuery.js</option>
+							</optgroup>
+							<optgroup label="Other files">
+								<option value="somefile">Some unknown file</option>
+								<option value="someotherfile">Some other file with a
+									very long option text</option>
+							</optgroup>
+						</select> <label for="number">Select a number</label> <select name="number"
+							id="number">
+							<option>1</option>
+							<option selected="selected">2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>							
+						</select> <label for="salutation">Select a title</label> 
+						<select	name="salutation" id="salutation">
+							<option selected="selected">Please pick one</option>
+							<option>Mr.</option>
+							<option>Mrs.</option>
+							<option>Dr.</option>
+							<option>Prof.</option>
+							<option>Other</option>
+						</select>
+					</fieldset>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
