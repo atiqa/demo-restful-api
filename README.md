@@ -1,4 +1,3 @@
-
 Data Republic Assignment
 
 Github repository:   https://github.com/atiqa/demo-restful-api
